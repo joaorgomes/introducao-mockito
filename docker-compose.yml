@@ -1,0 +1,12 @@
+services:
+  backend:
+    stdin_open: true
+    tty: true
+    command: bash
+    build:
+      context: .
+    container_name: introducao-mockito
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./taskmanagement/:/home/taskmanagement
