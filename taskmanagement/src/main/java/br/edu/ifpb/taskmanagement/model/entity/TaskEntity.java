@@ -22,6 +22,16 @@ public class TaskEntity {
     @Column(nullable = false)
     private boolean completed;
 
+    public TaskEntity() {
+
+    }
+
+    public TaskEntity(Long id, String title, boolean completed){
+        this.id = id;
+        this.title = title;
+        this.completed = completed;
+    }
+
     public Long getId() {
         return id;
     }
