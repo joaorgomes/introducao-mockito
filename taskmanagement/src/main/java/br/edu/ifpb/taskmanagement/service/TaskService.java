@@ -11,12 +11,8 @@ import br.edu.ifpb.taskmanagement.model.repository.TaskRepository;
 @Service
 public class TaskService {
 
-    private final TaskRepository taskRepository;
-
     @Autowired
-    public TaskService(TaskRepository taskRepository) {
-        this.taskRepository = taskRepository;
-    }
+    private TaskRepository taskRepository;
 
     public TaskEntity createTask(TaskEntity task) {
         return taskRepository.save(task);
