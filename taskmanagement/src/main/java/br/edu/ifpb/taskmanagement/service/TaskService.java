@@ -2,7 +2,6 @@ package br.edu.ifpb.taskmanagement.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.ifpb.taskmanagement.model.entity.TaskEntity;
@@ -11,8 +10,11 @@ import br.edu.ifpb.taskmanagement.model.repository.TaskRepository;
 @Service
 public class TaskService {
 
-    @Autowired
-    private TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
+
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     public TaskEntity createTask(TaskEntity task) {
         return taskRepository.save(task);
