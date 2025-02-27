@@ -1,0 +1,6 @@
+-docker compose up
+-docker container exec -it 3 bash
+
+
+docker compose start
+mvn test -Dtest="TaskRepositoryIntegrationTest"
